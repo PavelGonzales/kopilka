@@ -6,11 +6,13 @@ Vue.use(Vuex)
 const state = {
   accumulated: 1440,
   finalPoint: 200000,
+  postoned: false,
 }
 
 const mutations = {
   INCREMENT (state) {
-    state.accumulated += 720 
+    state.accumulated += 720,
+    state.postoned = true
   },
   DECREMENT (state) {
     state.count--

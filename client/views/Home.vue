@@ -4,6 +4,7 @@
       span машина
     counter
     progress-bar(:value="accumulated" :max="finalPoint")
+    
 </template>
 
 <script>
