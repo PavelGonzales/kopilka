@@ -4,12 +4,13 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  accumulated: 1440,
+  finalPoint: 200000,
 }
 
 const mutations = {
   INCREMENT (state) {
-    state.count++
+    state.accumulated += 720 
   },
   DECREMENT (state) {
     state.count--

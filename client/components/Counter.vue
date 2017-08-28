@@ -1,12 +1,11 @@
-<template>
-  <div class="counter-wrapper">
-    <div class="counter">
-      {{ count }}
-    </div>
-    <button @click="$store.commit('INCREMENT')">Increment</button>
-    <button @click="$store.commit('DECREMENT')">Decrement</button>
-    <button @click="$store.dispatch('incrementAsync')">Increment Async</button>
-  </div>
+<template lang="pug">
+  v-container(fluid="fluid" class="text-xs-center")
+    v-layout(row wrap)
+      v-flex(lg12)
+        h6 Отложил сегодня?
+        v-btn(success @click="$store.commit('INCREMENT')") Да
+        v-btn(light @click="$store.commit('DECREMENT')") Нет
+        v-btn(@click="$store.dispatch('incrementAsync')") Increment Async
 </template>
 
 <script>
