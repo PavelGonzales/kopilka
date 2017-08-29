@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  accumulated: 1440,
+  accumulated: 2160,
   finalPoint: 200000,
   postoned: false,
 }

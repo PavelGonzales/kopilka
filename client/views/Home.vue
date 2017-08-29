@@ -1,9 +1,22 @@
 <template lang="pug">
   .page
-    h1.title цель: 
-      span машина
-    counter
-    progress-bar(:value="accumulated" :max="finalPoint")
+    v-toolbar.grey.darken-4.white--text(dark)
+      v-toolbar-side-icon
+      v-toolbar-title Копилка
+      v-spacer
+      v-btn(icon)
+        v-icon search
+      v-btn(icon)
+        v-icon apps
+      v-btn(icon)
+        v-icon refresh
+      v-btn(icon)
+        v-icon more_vert
+    .page__content
+      h1.title цель: 
+        span машина
+      counter
+      progress-bar(:value="accumulated" :max="finalPoint")
     
 </template>
 
@@ -31,10 +44,15 @@ export default {
 .page 
   // background-color #222320
   min-height 100vh
-  display flex 
-  align-items center
-  flex-direction column
-  justify-content center
+  position relative
+  &__content
+
+    display flex 
+    align-items center
+    flex-direction column
+    justify-content center
+    padding-top 100px
+  
 .title 
   font-size 16px
   text-transform uppercase

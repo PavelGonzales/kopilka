@@ -7,7 +7,7 @@
         v-btn(light @click="$store.commit('DECREMENT')") Нет
         v-btn(@click="$store.dispatch('incrementAsync')") Increment Async
       v-flex(lg12 v-if="postoned")
-        h6 Ты сегодня уже отложил
+        v-alert(success value="true") Ты сегодня уже отложил
 </template>
 
 <script>
