@@ -6,6 +6,22 @@
         span машина
       counter
       progress-bar(:value="accumulated" :max="finalPoint")
+      v-layout(row wrap)
+        v-flex(lg12v)
+          v-chip.green.white--text
+            v-avatar.green.darken-4 {{ dayLeft }}
+            | дней осталось
+          v-chip.green.white--text
+            v-avatar.green.darken-4 {{ totalDay }}
+            | дней всего
+          v-chip.green.white--text
+            v-avatar.green.darken-4 {{ totalDay - dayLeft }}
+            | дней прошло
+          v-chip.green.white--text
+            v-avatar.green.darken-4 {{ sumPerDay }}
+            | рублей/день
+
+        
     
 </template>
 
@@ -13,7 +29,7 @@
 import Counter from 'components/Counter'
 import ProgressBar from 'components/Progress.vue'
 import AppHeader from 'components/Header.vue'
-
+import moment from 'moment';
 
 export default {
   computed: {
@@ -22,6 +38,21 @@ export default {
     },
     finalPoint() {
       return this.$store.state.finalPoint
+    },
+    dateStart() {
+      return this.$store.state.date_start
+    },
+    dateEnd() {
+      return this.$store.state.date_end
+    },
+    dayLeft() {
+      return moment(this.dateEnd).diff(moment(), 'days')
+    },
+    totalDay() {
+      return moment(this.dateEnd).diff(moment(this.dateStart), 'days')
+    },
+    sumPerDay() {
+      return Math.ceil(this.finalPoint / this.totalDay)
     }
   },
   components: {

@@ -4,9 +4,12 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  accumulated: 2160,
+  accumulated: 2880,
   finalPoint: 200000,
   postoned: false,
+  date_start: '2017-08-27',
+  date_end: '2018-06-01',
+  
 }
 
 const mutations = {
