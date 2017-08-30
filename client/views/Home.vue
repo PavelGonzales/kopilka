@@ -1,25 +1,27 @@
 <template lang="pug">
-  .page
-    app-header
-    .page__content
-      h1.title цель: 
-        span машина
-      counter
-      progress-bar(:value="accumulated" :max="finalPoint")
-      v-layout(row wrap)
-        v-flex(lg12v)
-          v-chip.green.white--text
-            v-avatar.green.darken-4 {{ dayLeft }}
-            | дней осталось
-          v-chip.green.white--text
-            v-avatar.green.darken-4 {{ totalDay }}
-            | дней всего
-          v-chip.green.white--text
-            v-avatar.green.darken-4 {{ totalDay - dayLeft }}
-            | дней прошло
-          v-chip.green.white--text
-            v-avatar.green.darken-4 {{ sumPerDay }}
-            | рублей/день
+   v-app
+    .page
+      app-header
+      .page__content
+        h1.title цель: 
+          span машина
+        counter
+        progress-bar(:value="accumulated" :max="finalPoint")
+        v-layout(row wrap)
+          v-flex(lg12v)
+            v-chip.green.white--text
+              v-avatar.green.darken-4 {{ dayLeft }}
+              | дней осталось
+            v-chip.green.white--text
+              v-avatar.green.darken-4 {{ totalDay }}
+              | дней всего
+            v-chip.green.white--text
+              v-avatar.green.darken-4 {{ totalDay - dayLeft }}
+              | дней прошло
+            v-chip.green.white--text
+              v-avatar.green.darken-4 {{ sumPerDay }}
+              | рублей/день
+
 
         
     

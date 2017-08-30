@@ -18,13 +18,22 @@
         v-btn(slot="activator" dark) Войти
           v-icon(right) assignment_ind
         v-card
-          v-card-title
-            .headline Use Google's location service?
-          v-card-text Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-          v-card-actions
-            v-spacer
-            v-btn(class="green--text darken-1" flat="flat" @click.native="dialog = false") Disagree
-            v-btn(class="green--text darken-1" flat="flat" @click.native="dialog = false") Agree
+          v-toolbar.indigo(dark)
+            v-toolbar-title Войти
+          v-card-text
+            v-text-field(
+              label="Логин"
+              value="")
+            v-text-field(
+              name="input-10-1"
+              v-model="password"
+              :append-icon="e1 ? 'visibility_off' : 'visibility'"
+              :append-icon-cb="() => (e1 = !e1)"
+              :type="e1 ? 'password' : 'text'"
+              label="Пароль")
+
+            v-btn(dark success @click.native="dialog = false") Войти
+            v-btn(dark error @click.native="dialog = false") Отмена
        
 
 </template>
@@ -39,7 +48,9 @@ export default {
         {
           title: 'About'
         }
-      ]
+      ],
+      e1: true,
+      password: ''
     }
   }
 }
