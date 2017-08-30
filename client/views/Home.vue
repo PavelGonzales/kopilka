@@ -1,17 +1,6 @@
 <template lang="pug">
   .page
-    v-toolbar.grey.darken-4.white--text(dark)
-      v-toolbar-side-icon
-      v-toolbar-title Копилка
-      v-spacer
-      v-btn(icon)
-        v-icon search
-      v-btn(icon)
-        v-icon apps
-      v-btn(icon)
-        v-icon refresh
-      v-btn(icon)
-        v-icon more_vert
+    app-header
     .page__content
       h1.title цель: 
         span машина
@@ -23,6 +12,8 @@
 <script>
 import Counter from 'components/Counter'
 import ProgressBar from 'components/Progress.vue'
+import AppHeader from 'components/Header.vue'
+
 
 export default {
   computed: {
@@ -35,7 +26,8 @@ export default {
   },
   components: {
     Counter,
-    ProgressBar
+    ProgressBar,
+    AppHeader
   }
 }
 </script>
