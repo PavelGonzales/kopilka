@@ -22,8 +22,23 @@
               v-avatar.green.darken-4 {{ sumPerDay }}
               | рублей/день
 
-
-        
+        v-data-table(v-bind:headers="headers"
+                     :items="items"
+                     v-bind:pagination.sync="pagination"
+                     hide-actions
+                     class="elevation-1")
+                  
+          template(slot="items" scope="props")
+            td {{ props.item.date }}
+            td(class="text-xs-right") {{ props.item.postponed }}
+            td(class="text-xs-right") {{ props.item.saved }}
+            td(class="text-xs-right") {{ props.item.remains }}
+          template(slot="footer")
+            td(colspan="100%")
+              strong This is an extra footer
+        .text-xs-center.pt-2
+          v-pagination(v-model="pagination.page" :length="pages")
+    
     
 </template>
 
@@ -32,8 +47,84 @@ import Counter from 'components/Counter'
 import ProgressBar from 'components/Progress.vue'
 import AppHeader from 'components/Header.vue'
 import moment from 'moment';
+import dataTable from './../content/data-table.js';
+moment.locale('ru');
 
 export default {
+  data() {
+    return {
+      search: '',
+      pagination: {},
+      selected: [],
+      headers: [
+        {
+            text: 'Дата',
+            align: 'center',
+            sortable: false,
+            value: 'date'
+        },
+        { 
+          text: 'Отложил',
+          sortable: false,
+          value: 'postponed' 
+        },
+        { 
+          text: 'Накопил',
+          sortable: false,
+          value: 'saved' 
+        },
+        { 
+          text: 'Осталось',
+          sortable: false,
+          value: 'remains' 
+        },
+      ],
+      items: [
+        {
+          value: false,
+          date: moment('2017-08-28').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 1,
+          remains: 200000 - 720 * 1,
+        },
+        {
+          value: false,
+          date: moment('2017-08-29').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 2,
+          remains: 200000 - 720 * 2,
+        },
+        {
+          value: false,
+          date: moment('2017-08-30').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 3,
+          remains: 200000 - 720 * 3,
+        },
+        {
+          value: false,
+          date: moment('2017-08-31').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 4,
+          remains: 200000 - 720 * 4,
+        },
+        {
+          value: false,
+          date: moment('2017-09-01').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 5,
+          remains: 200000 - 720 * 5,
+        },
+        {
+          value: false,
+          date: moment('2017-08-02').format("DD MMM YY"),
+          postponed: 720,
+          saved: 720 * 6,
+          remains: 200000 - 720 * 6,
+        },
+      ]
+    }
+  },
   computed: {
     accumulated() {
       return this.$store.state.accumulated
@@ -55,6 +146,9 @@ export default {
     },
     sumPerDay() {
       return Math.ceil(this.finalPoint / this.totalDay)
+    },
+    pages() {
+      return this.pagination.rowsPerPage ? Math.ceil(this.items.length / this.pagination.rowsPerPage) : 0
     }
   },
   components: {

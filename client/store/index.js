@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import moment from 'moment';
 
 Vue.use(Vuex)
 
 const state = {
-  accumulated: 2880,
+  accumulated: 4320,
   finalPoint: 200000,
   postoned: false,
-  date_start: '2017-08-27',
+  date_start: '2017-08-28',
   date_end: '2018-06-01',
-  
 }
 
 const mutations = {
