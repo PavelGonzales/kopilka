@@ -11,16 +11,15 @@
                           label='E-mail' 
                           :error-messages="errors.collect('email')"
                           v-validate="'required'" 
-                          data-vv-name='email'
-                          name="email"
-                          required)
+                          data-vv-name='email' 
+                          required='')
               v-text-field(v-model='password'
                           label='Password' 
                           :error-messages="errors.collect('password')" 
                           v-validate="'required'" 
                           data-vv-name='password' 
-                          required
-                          name="name"
+                          required=''
+                          name="input-10-1"
                           :append-icon="e1 ? 'visibility_off' : 'visibility'"
                           :append-icon-cb="() => (e1 = !e1)"
                           :type="e1 ? 'password' : 'text'")
@@ -50,6 +49,7 @@
         this.$validator.validateAll()
       },
       clear () {
+        this.name = ''
         this.email = ''
         this.select = null
         this.checkbox = false
