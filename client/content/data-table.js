@@ -1,129 +1,82 @@
-export default {
-    headers: [
-        {
-            text: 'Dessert (100g serving)',
-            align: 'left',
-            sortable: false,
-            value: 'name'
-        },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Sodium (mg)', value: 'sodium' },
-        { text: 'Calcium (%)', value: 'calcium' },
-        { text: 'Iron (%)', value: 'iron' }
-    ],
-    items: [
-        {
+import moment from 'moment';
+
+export default [
+    {
         value: false,
-        name: 'Frozen Yogurt',
-        calories: 159,
-        fat: 6.0,
-        carbs: 24,
-        protein: 4.0,
-        sodium: 87,
-        calcium: '14%',
-        iron: '1%'
-        },
-        {
+        date: moment('2017-08-27').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 1,
+        remains: 200000 - 720 * 1,
+    },
+    {
         value: false,
-        name: 'Ice cream sandwich',
-        calories: 237,
-        fat: 9.0,
-        carbs: 37,
-        protein: 4.3,
-        sodium: 129,
-        calcium: '8%',
-        iron: '1%'
-        },
-        {
+        date: moment('2017-08-28').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 2,
+        remains: 200000 - 720 * 2,
+    },
+    {
         value: false,
-        name: 'Eclair',
-        calories: 262,
-        fat: 16.0,
-        carbs: 23,
-        protein: 6.0,
-        sodium: 337,
-        calcium: '6%',
-        iron: '7%'
-        },
-        {
+        date: moment('2017-08-29').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 3,
+        remains: 200000 - 720 * 3,
+    },
+    {
         value: false,
-        name: 'Cupcake',
-        calories: 305,
-        fat: 3.7,
-        carbs: 67,
-        protein: 4.3,
-        sodium: 413,
-        calcium: '3%',
-        iron: '8%'
-        },
-        {
+        date: moment('2017-08-30').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 4,
+        remains: 200000 - 720 * 4,
+    },
+    {
         value: false,
-        name: 'Gingerbread',
-        calories: 356,
-        fat: 16.0,
-        carbs: 49,
-        protein: 3.9,
-        sodium: 327,
-        calcium: '7%',
-        iron: '16%'
-        },
-        {
+        date: moment('2017-10-31').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 5,
+        remains: 200000 - 720 * 5,
+    },
+    {
         value: false,
-        name: 'Jelly bean',
-        calories: 375,
-        fat: 0.0,
-        carbs: 94,
-        protein: 0.0,
-        sodium: 50,
-        calcium: '0%',
-        iron: '0%'
-        },
-        {
+        date: moment('2017-08-01').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 6,
+        remains: 200000 - 720 * 6,
+    },
+    {
         value: false,
-        name: 'Lollipop',
-        calories: 392,
-        fat: 0.2,
-        carbs: 98,
-        protein: 0,
-        sodium: 38,
-        calcium: '0%',
-        iron: '2%'
-        },
-        {
+        date: moment('2017-08-02').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 7,
+        remains: 200000 - 720 * 7,
+    },
+    {
         value: false,
-        name: 'Honeycomb',
-        calories: 408,
-        fat: 3.2,
-        carbs: 87,
-        protein: 6.5,
-        sodium: 562,
-        calcium: '0%',
-        iron: '45%'
-        },
-        {
+        date: moment('2017-08-04').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 8,
+        remains: 200000 - 720 * 8,
+    },
+    {
         value: false,
-        name: 'Donut',
-        calories: 452,
-        fat: 25.0,
-        carbs: 51,
-        protein: 4.9,
-        sodium: 326,
-        calcium: '2%',
-        iron: '22%'
-        },
-        {
+        date: moment('2017-08-05').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 9,
+        remains: 200000 - 720 * 9,
+    },
+    {
         value: false,
-        name: 'KitKat',
-        calories: 518,
-        fat: 26.0,
-        carbs: 65,
-        protein: 7,
-        sodium: 54,
-        calcium: '12%',
-        iron: '6%'
-        }
-    ]
-}
+        date: moment('2017-08-05').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 10,
+        remains: 200000 - 720 * 10,
+    },
+    {
+        value: false,
+        date: moment('2017-08-06').format("DD MMM YY"),
+        postponed: 720,
+        saved: 720 * 11,
+        remains: 200000 - 720 * 11,
+    },
+]
+    

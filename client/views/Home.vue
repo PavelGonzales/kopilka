@@ -79,50 +79,7 @@ export default {
           value: 'remains' 
         },
       ],
-      items: [
-        {
-          value: false,
-          date: moment('2017-08-28').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 1,
-          remains: 200000 - 720 * 1,
-        },
-        {
-          value: false,
-          date: moment('2017-08-29').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 2,
-          remains: 200000 - 720 * 2,
-        },
-        {
-          value: false,
-          date: moment('2017-08-30').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 3,
-          remains: 200000 - 720 * 3,
-        },
-        {
-          value: false,
-          date: moment('2017-08-31').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 4,
-          remains: 200000 - 720 * 4,
-        },
-        {
-          value: false,
-          date: moment('2017-09-01').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 5,
-          remains: 200000 - 720 * 5,
-        },
-        {
-          value: false,
-          date: moment('2017-08-02').format("DD MMM YY"),
-          postponed: 720,
-          saved: 720 * 6,
-          remains: 200000 - 720 * 6,
-        },
-      ]
+      items: dataTable,
     }
   },
   computed: {
